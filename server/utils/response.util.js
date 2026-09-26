@@ -19,6 +19,7 @@ const sendPaginated = (res, data, total, page, limit, message = 'Success') => {
     message,
     data: {
       items: data,
+      applications: data,
       bookings: data,
       serviceRequests: data,
       requests: data,
@@ -30,6 +31,7 @@ const sendPaginated = (res, data, total, page, limit, message = 'Success') => {
       notifications: data,
     },
     items: data,
+    applications: data,
     bookings: data,
     serviceRequests: data,
     pagination: {

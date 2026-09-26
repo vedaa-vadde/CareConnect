@@ -24,7 +24,9 @@ const AdminProviderApplications = () => {
   });
 
   const rawData = data?.data?.data;
-  const applications = Array.isArray(rawData) ? rawData : rawData?.applications || [];
+  const applications = Array.isArray(rawData)
+    ? rawData
+    : (rawData?.applications || rawData?.items || rawData?.providers || data?.data?.items || []);
 
   const verifyMutation = useMutation({
     mutationFn: ({ id, status, notes, rejectionReason }) =>

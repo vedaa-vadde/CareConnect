@@ -219,6 +219,7 @@ const getPendingApplications = async (req, res) => {
     const [applications, total] = await Promise.all([
       ProviderProfile.find(filter)
         .populate('userId', 'name username mobile email location')
+        .populate('categories', 'name icon slug')
         .sort({ applicationSubmittedAt: -1 })
         .skip(skip)
         .limit(limit),
